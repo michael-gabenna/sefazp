@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sefazp::VERSION
   spec.authors       = ["Alexei Telles"]
   spec.email         = ["alexeitsb@gmail.com"]
-  spec.summary       = "Parser for sefaz xml documents"
-  spec.description   = "Simple gem to parse sefaz xml documents - MDFe, CTe and NFe"
+  spec.summary       = "Transforma seus arquivos xml de MDFe, CTe e NFe em um Hash contendo as informações mais importantes"
+  spec.description   = ""
   spec.homepage      = ""
   spec.license       = "MIT"
 
