@@ -18,9 +18,9 @@ Or install it yourself as:
 
 ## Usage
 
-Sefazp.parse_mdfe(xml_content)
-Sefazp.parse_cte(xml_content)
-Sefazp.parse_nfe(xml_content)
+1. Sefazp.parse_mdfe(xml_content)
+2. Sefazp.parse_cte(xml_content)
+3. Sefazp.parse_nfe(xml_content)
 
 ## Contributing
 
