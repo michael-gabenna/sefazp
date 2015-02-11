@@ -4,11 +4,10 @@ class Mdfe
   end
 
   def parse
-    # begin
+    begin
       doc = REXML::Document.new(@xml_content)
       keys = Array.new
       municipio_do_emitente = doc.elements["mdfeProc/MDFe/infMDFe/emit/enderEmit/cMun"].get_text.to_s
-      municipio_de_origem = doc.elements["mdfeProc/MDFe/infMDFe/ide/infMunCarrega/cMunCarrega"].get_text.to_s
       municipio_de_destino = doc.elements["mdfeProc/MDFe/infMDFe/infDoc/infMunDescarga/cMunDescarga"].get_text.to_s
       numero = doc.elements["mdfeProc/MDFe/infMDFe/ide/nMDF"].get_text.to_s
       serie = doc.elements["mdfeProc/MDFe/infMDFe/ide/serie"].get_text.to_s
@@ -35,7 +34,6 @@ class Mdfe
 
       return {
               municipio_do_emitente: municipio_do_emitente,
-              municipio_de_origem: municipio_de_origem,
               municipio_de_destino: municipio_de_destino,
               numero: numero,
               serie: serie,
@@ -56,8 +54,8 @@ class Mdfe
               emissao: emissao,
               keys: keys
              }
-    # rescue
-    #   return nil
-    # end
+    rescue
+      return nil
+    end
   end
 end
