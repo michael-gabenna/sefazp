@@ -12,99 +12,99 @@ class Cte
       keys = Array.new
       expedidor = !doc.elements["cteProc/CTe/infCte/exped/xNome"].nil?
       recebedor = !doc.elements["cteProc/CTe/infCte/receb/xNome"].nil?
-      municipio_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/cMun"].get_text
-      municipio_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/cMun"].get_text
-      municipio_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/cMun"].get_text
-      municipio_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/cMun"].get_text : nil
-      municipio_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/cMun"].get_text : nil
-      municipio_de_origem = doc.elements["cteProc/CTe/infCte/ide/cMunIni"].get_text
-      municipio_de_destino = doc.elements["cteProc/CTe/infCte/ide/cMunFim"].get_text
-      municipio_de_emissao = doc.elements["cteProc/CTe/infCte/ide/cMunEnv"].get_text
-      numero = doc.elements["cteProc/CTe/infCte/ide/nCT"].get_text
-      serie = doc.elements["cteProc/CTe/infCte/ide/serie"].get_text
-      chave_de_acesso = doc.elements["cteProc/CTe/infCte"].attributes["Id"]
-      tipo_do_cte = doc.elements["cteProc/CTe/infCte/ide/tpCTe"].get_text
-      tipo_do_servico = doc.elements["cteProc/CTe/infCte/ide/tpServ"].get_text
-      tomador_do_servico = doc.elements["cteProc/CTe/infCte/ide/toma03/toma"].get_text
-      forma_de_pagamento = doc.elements["cteProc/CTe/infCte/ide/forPag"].get_text
-      codigo_do_cfop = doc.elements["cteProc/CTe/infCte/ide/CFOP"].get_text
-      descricao_do_cfop = doc.elements["cteProc/CTe/infCte/ide/natOp"].get_text
-      cnpj_do_emitente = doc.elements["cteProc/CTe/infCte/emit/CNPJ"].get_text
-      inscricao_estadual_do_emitente = doc.elements["cteProc/CTe/infCte/emit/IE"].get_text
-      nome_do_emitente = doc.elements["cteProc/CTe/infCte/emit/xNome"].get_text
-      nome_fantasia_do_emitente = doc.elements["cteProc/CTe/infCte/emit/xFant"].get_text
-      logradouro_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/xLgr"].get_text
-      numero_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/nro"].get_text
-      bairro_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/xBairro"].get_text
-      cep_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/CEP"].get_text
-      cnpj_do_remetente = doc.elements["cteProc/CTe/infCte/rem/CNPJ"].get_text
-      inscricao_estadual_do_remetente = doc.elements["cteProc/CTe/infCte/rem/IE"].get_text
-      nome_do_remetente = doc.elements["cteProc/CTe/infCte/rem/xNome"].get_text
-      logradouro_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/xLgr"].get_text
-      numero_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/nro"].get_text
-      bairro_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/xBairro"].get_text
-      cep_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/CEP"].get_text
-      cnpj_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/CNPJ"].get_text
-      inscricao_estadual_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/IE"].get_text
-      nome_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/xNome"].get_text
-      logradouro_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/xLgr"].get_text
-      numero_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/nro"].get_text
-      bairro_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/xBairro"].get_text
-      cep_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/CEP"].get_text
-      cnpj_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/CNPJ"].get_text : nil
-      inscricao_estadual_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/IE"].get_text : nil
-      nome_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/xNome"].get_text : nil
-      logradouro_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/xLgr"].get_text : nil
-      numero_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/nro"].get_text : nil
-      bairro_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/xBairro"].get_text : nil
-      cep_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/CEP"].get_text : nil
-      cnpj_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/CNPJ"].get_text : nil
-      inscricao_estadual_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/IE"].get_text : nil
-      nome_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/xNome"].get_text : nil
-      logradouro_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/xLgr"].get_text : nil
-      numero_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/nro"].get_text : nil
-      bairro_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/xBairro"].get_text : nil
-      cep_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/CEP"].get_text : nil
-      produto_predominante = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/proPred"].get_text
-      unidade_de_medida = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/infQ/tpMed"].get_text
-      quantidade = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/infQ/qCarga"].get_text
-      valor_da_mercadoria = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/vCarga"].get_text
-      responsavel = doc.elements["cteProc/CTe/infCte/infCTeNorm/seg/respSeg"].get_text
-      valor_total = doc.elements["cteProc/CTe/infCte/vPrest/vTPrest"].get_text
-      valor_a_receber = doc.elements["cteProc/CTe/infCte/vPrest/vRec"].get_text
-      base_de_calculo = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/vBC"].get_text
-      aliquota_icms = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/pICMS"].get_text
-      valor_icms = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/vICMS"].get_text
-      lotacao = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/lota"].get_text
-      data_prevista_de_entrega = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/dPrev"].get_text
-      tipo_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/tpVeic"].get_text
-      placa_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/placa"].get_text
-      uf_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/UF"].get_text
-      renavan_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/RENAVAM"].get_text
-      tara_em_kg_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/tara"].get_text
-      capacidade_em_kg_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/capKG"].get_text
-      capacidade_em_m3_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/capM3"].get_text
-      nome_do_motorista = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/moto/xNome"].get_text
-      cpf_do_motorista = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/moto/CPF"].get_text
-      rntrc = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/RNTRC"].get_text
-      emissao = doc.elements["cteProc/CTe/infCte/ide/dhEmi"].get_text
+      municipio_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/cMun"].get_text.to_s
+      municipio_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/cMun"].get_text.to_s
+      municipio_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/cMun"].get_text.to_s
+      municipio_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/cMun"].get_text.to_s : nil
+      municipio_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/cMun"].get_text.to_s : nil
+      municipio_de_origem = doc.elements["cteProc/CTe/infCte/ide/cMunIni"].get_text.to_s
+      municipio_de_destino = doc.elements["cteProc/CTe/infCte/ide/cMunFim"].get_text.to_s
+      municipio_de_emissao = doc.elements["cteProc/CTe/infCte/ide/cMunEnv"].get_text.to_s
+      numero = doc.elements["cteProc/CTe/infCte/ide/nCT"].get_text.to_s
+      serie = doc.elements["cteProc/CTe/infCte/ide/serie"].get_text.to_s
+      chave_de_acesso = doc.elements["cteProc/CTe/infCte"].attributes["Id"].to_s
+      tipo_do_cte = doc.elements["cteProc/CTe/infCte/ide/tpCTe"].get_text.to_s
+      tipo_do_servico = doc.elements["cteProc/CTe/infCte/ide/tpServ"].get_text.to_s
+      tomador_do_servico = doc.elements["cteProc/CTe/infCte/ide/toma03/toma"].get_text.to_s
+      forma_de_pagamento = doc.elements["cteProc/CTe/infCte/ide/forPag"].get_text.to_s
+      codigo_do_cfop = doc.elements["cteProc/CTe/infCte/ide/CFOP"].get_text.to_s
+      descricao_do_cfop = doc.elements["cteProc/CTe/infCte/ide/natOp"].get_text.to_s
+      cnpj_do_emitente = doc.elements["cteProc/CTe/infCte/emit/CNPJ"].get_text.to_s
+      inscricao_estadual_do_emitente = doc.elements["cteProc/CTe/infCte/emit/IE"].get_text.to_s
+      nome_do_emitente = doc.elements["cteProc/CTe/infCte/emit/xNome"].get_text.to_s
+      nome_fantasia_do_emitente = doc.elements["cteProc/CTe/infCte/emit/xFant"].get_text.to_s
+      logradouro_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/xLgr"].get_text.to_s
+      numero_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/nro"].get_text.to_s
+      bairro_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/xBairro"].get_text.to_s
+      cep_do_emitente = doc.elements["cteProc/CTe/infCte/emit/enderEmit/CEP"].get_text.to_s
+      cnpj_do_remetente = doc.elements["cteProc/CTe/infCte/rem/CNPJ"].get_text.to_s
+      inscricao_estadual_do_remetente = doc.elements["cteProc/CTe/infCte/rem/IE"].get_text.to_s
+      nome_do_remetente = doc.elements["cteProc/CTe/infCte/rem/xNome"].get_text.to_s
+      logradouro_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/xLgr"].get_text.to_s
+      numero_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/nro"].get_text.to_s
+      bairro_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/xBairro"].get_text.to_s
+      cep_do_remetente = doc.elements["cteProc/CTe/infCte/rem/enderReme/CEP"].get_text.to_s
+      cnpj_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/CNPJ"].get_text.to_s
+      inscricao_estadual_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/IE"].get_text.to_s
+      nome_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/xNome"].get_text.to_s
+      logradouro_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/xLgr"].get_text.to_s
+      numero_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/nro"].get_text.to_s
+      bairro_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/xBairro"].get_text.to_s
+      cep_do_destinatario = doc.elements["cteProc/CTe/infCte/dest/enderDest/CEP"].get_text.to_s
+      cnpj_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/CNPJ"].get_text.to_s : nil
+      inscricao_estadual_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/IE"].get_text.to_s : nil
+      nome_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/xNome"].get_text.to_s : nil
+      logradouro_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/xLgr"].get_text.to_s : nil
+      numero_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/nro"].get_text.to_s : nil
+      bairro_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/xBairro"].get_text.to_s : nil
+      cep_do_expedidor = expedidor ? doc.elements["cteProc/CTe/infCte/exped/enderExped/CEP"].get_text.to_s : nil
+      cnpj_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/CNPJ"].get_text.to_s : nil
+      inscricao_estadual_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/IE"].get_text.to_s : nil
+      nome_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/xNome"].get_text.to_s : nil
+      logradouro_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/xLgr"].get_text.to_s : nil
+      numero_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/nro"].get_text.to_s : nil
+      bairro_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/xBairro"].get_text.to_s : nil
+      cep_do_recebedor = recebedor ? doc.elements["cteProc/CTe/infCte/receb/enderReceb/CEP"].get_text.to_s : nil
+      produto_predominante = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/proPred"].get_text.to_s
+      unidade_de_medida = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/infQ/tpMed"].get_text.to_s
+      quantidade = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/infQ/qCarga"].get_text.to_s
+      valor_da_mercadoria = doc.elements["cteProc/CTe/infCte/infCTeNorm/infCarga/vCarga"].get_text.to_s
+      responsavel = doc.elements["cteProc/CTe/infCte/infCTeNorm/seg/respSeg"].get_text.to_s
+      valor_total = doc.elements["cteProc/CTe/infCte/vPrest/vTPrest"].get_text.to_s
+      valor_a_receber = doc.elements["cteProc/CTe/infCte/vPrest/vRec"].get_text.to_s
+      base_de_calculo = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/vBC"].get_text.to_s
+      aliquota_icms = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/pICMS"].get_text.to_s
+      valor_icms = doc.elements["cteProc/CTe/infCte/imp/ICMS/ICMS00/vICMS"].get_text.to_s
+      lotacao = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/lota"].get_text.to_s
+      data_prevista_de_entrega = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/dPrev"].get_text.to_s
+      tipo_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/tpVeic"].get_text.to_s
+      placa_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/placa"].get_text.to_s
+      uf_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/UF"].get_text.to_s
+      renavan_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/RENAVAM"].get_text.to_s
+      tara_em_kg_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/tara"].get_text.to_s
+      capacidade_em_kg_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/capKG"].get_text.to_s
+      capacidade_em_m3_do_veiculo = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/veic/capM3"].get_text.to_s
+      nome_do_motorista = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/moto/xNome"].get_text.to_s
+      cpf_do_motorista = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/moto/CPF"].get_text.to_s
+      rntrc = doc.elements["cteProc/CTe/infCte/infCTeNorm/infModal/rodo/RNTRC"].get_text.to_s
+      emissao = doc.elements["cteProc/CTe/infCte/ide/dhEmi"].get_text.to_s
       doc.get_elements("cteProc/CTe/infCte/vPrest/Comp").each do |comp|
-        if comp.elements["xNome"].get_text == "FRETE VALOR"
-          frete = comp.elements["vComp"].get_text
-        elsif comp.elements["xNome"].get_text == "PEDAGIO"
-          pedagio = comp.elements["vComp"].get_text
-        elsif comp.elements["xNome"].get_text == "OUTROS"
-          outros = comp.elements["vComp"].get_text
+        if comp.elements["xNome"].get_text.to_s == "FRETE VALOR"
+          frete = comp.elements["vComp"].get_text.to_s
+        elsif comp.elements["xNome"].get_text.to_s == "PEDAGIO"
+          pedagio = comp.elements["vComp"].get_text.to_s
+        elsif comp.elements["xNome"].get_text.to_s == "OUTROS"
+          outros = comp.elements["vComp"].get_text.to_s
         end
       end
       if doc.get_elements("cteProc/CTe/infCte/infCTeNorm/infDoc/infNFe")
         doc.get_elements("cteProc/CTe/infCte/infCTeNorm/infDoc/infNFe").each do |key|
-          keys << key.elements["chave"].get_text
+          keys << key.elements["chave"].get_text.to_s
         end
       end
       if doc.get_elements("cteProc/CTe/infCte/rem/infOutros")
         doc.get_elements("cteProc/CTe/infCte/rem/infOutros").each do |key|
-          keys << key.elements["nDoc"].get_text
+          keys << key.elements["nDoc"].get_text.to_s
         end
       end
 
