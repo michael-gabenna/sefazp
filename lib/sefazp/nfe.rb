@@ -58,7 +58,15 @@ class Nfe
       valor_de_outras_despesas = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vOutro"].get_text.to_s
       valor_do_ipi = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vIPI"].get_text.to_s
       valor_total_da_nota = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vNF"].get_text.to_s
+      cnpj_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/CNPJ"].get_text.to_s : nil
+      inscricao_estadual_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/IE"].get_text.to_s : nil
+      nome_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xNome"].get_text.to_s : nil
+      logradouro_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xEnder"].get_text.to_s : nil
+      municipio_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xMun"].get_text.to_s : nil
+      uf_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/UF"].get_text.to_s : nil
       frete_por_conta = @document.elements["nfeProc/NFe/infNFe/transp/modFrete"].get_text.to_s
+      placa_do_veiculo = @document.elements["nfeProc/NFe/infNFe/transp/veicTransp"] ? @document.elements["nfeProc/NFe/infNFe/transp/veicTransp/placa"].get_text.to_s : nil
+      uf_do_veiculo = @document.elements["nfeProc/NFe/infNFe/transp/veicTransp"] ? @document.elements["nfeProc/NFe/infNFe/transp/veicTransp/UF"].get_text.to_s : nil
       quantidade = @document.elements["nfeProc/NFe/infNFe/transp/vol/qVol"].get_text.to_s
       especie = @document.elements["nfeProc/NFe/infNFe/transp/vol/esp"].get_text.to_s
       peso_bruto = @document.elements["nfeProc/NFe/infNFe/transp/vol/pesoB"].get_text.to_s
@@ -120,7 +128,15 @@ class Nfe
               valor_de_outras_despesas: valor_de_outras_despesas,
               valor_do_ipi: valor_do_ipi,
               valor_total_da_nota: valor_total_da_nota,
+              cnpj_da_transportadora: cnpj_da_transportadora,
+              inscricao_estadual_da_transportadora: inscricao_estadual_da_transportadora,
+              nome_da_transportadora: nome_da_transportadora,
+              logradouro_da_transportadora: logradouro_da_transportadora,
+              municipio_da_transportadora: municipio_da_transportadora,
+              uf_da_transportadora: uf_da_transportadora,
               frete_por_conta: frete_por_conta,
+              placa_do_veiculo: placa_do_veiculo,
+              uf_do_veiculo: uf_do_veiculo,
               quantidade: quantidade,
               especie: especie,
               peso_bruto: peso_bruto,
@@ -173,7 +189,15 @@ class Nfe
       valor_de_outras_despesas = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vOutro"].get_text.to_s
       valor_do_ipi = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vIPI"].get_text.to_s
       valor_total_da_nota = @document.elements["nfeProc/NFe/infNFe/total/ICMSTot/vNF"].get_text.to_s
+      cnpj_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/CNPJ"].get_text.to_s : nil
+      inscricao_estadual_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/IE"].get_text.to_s : nil
+      nome_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xNome"].get_text.to_s : nil
+      logradouro_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xEnder"].get_text.to_s : nil
+      municipio_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/xMun"].get_text.to_s : nil
+      uf_da_transportadora = @document.elements["nfeProc/NFe/infNFe/transp/transporta"] ? @document.elements["nfeProc/NFe/infNFe/transp/transporta/UF"].get_text.to_s : nil
       frete_por_conta = @document.elements["nfeProc/NFe/infNFe/transp/modFrete"].get_text.to_s
+      placa_do_veiculo = @document.elements["nfeProc/NFe/infNFe/transp/veicTransp"] ? @document.elements["nfeProc/NFe/infNFe/transp/veicTransp/placa"].get_text.to_s : nil
+      uf_do_veiculo = @document.elements["nfeProc/NFe/infNFe/transp/veicTransp"] ? @document.elements["nfeProc/NFe/infNFe/transp/veicTransp/UF"].get_text.to_s : nil
       quantidade = @document.elements["nfeProc/NFe/infNFe/transp/vol/qVol"].get_text.to_s
       especie = @document.elements["nfeProc/NFe/infNFe/transp/vol/esp"].get_text.to_s
       peso_liquido = @document.elements["nfeProc/NFe/infNFe/transp/vol/pesoL"].get_text.to_s
@@ -233,7 +257,15 @@ class Nfe
               valor_de_outras_despesas: valor_de_outras_despesas,
               valor_do_ipi: valor_do_ipi,
               valor_total_da_nota: valor_total_da_nota,
+              cnpj_da_transportadora: cnpj_da_transportadora,
+              inscricao_estadual_da_transportadora: inscricao_estadual_da_transportadora,
+              nome_da_transportadora: nome_da_transportadora,
+              logradouro_da_transportadora: logradouro_da_transportadora,
+              municipio_da_transportadora: municipio_da_transportadora,
+              uf_da_transportadora: uf_da_transportadora,
               frete_por_conta: frete_por_conta,
+              placa_do_veiculo: placa_do_veiculo,
+              uf_do_veiculo: uf_do_veiculo,
               quantidade: quantidade,
               especie: especie,
               peso_liquido: peso_liquido,
