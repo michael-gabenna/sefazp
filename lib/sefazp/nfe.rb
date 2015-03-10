@@ -39,7 +39,7 @@ class Nfe
       else
         documento_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/CPF"].get_text.to_s
       end
-      inscricao_estadual_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/IE"].get_text.to_s
+      inscricao_estadual_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/IE"].get_text.to_s rescue nil
       nome_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/xNome"].get_text.to_s
       logradouro_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/enderDest/xLgr"].get_text.to_s
       numero_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/enderDest/nro"].get_text.to_s
@@ -171,7 +171,7 @@ class Nfe
       else
         documento_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/CPF"].get_text.to_s
       end
-      inscricao_estadual_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/IE"].get_text.to_s
+      inscricao_estadual_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/IE"].get_text.to_s rescue nil
       nome_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/xNome"].get_text.to_s
       logradouro_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/enderDest/xLgr"].get_text.to_s
       numero_do_destinatario = @document.elements["nfeProc/NFe/infNFe/dest/enderDest/nro"].get_text.to_s
